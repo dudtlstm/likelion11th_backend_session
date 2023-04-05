@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from main import views # main의 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.mainpage, name="mainpage"),
+    path('', views.secondpage, name="secondpage"),
 ]
