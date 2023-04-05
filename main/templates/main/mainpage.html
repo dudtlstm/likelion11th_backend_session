@@ -1,9 +1,11 @@
-<!doctype html>
-<html lang="ko">
-<head>
-    <title>dgu_likelion11th</title>
-</head>
-<body>
-    <p>Hello! _mainpage</p>
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+<!-- html에서 static 파일을 불러오기 위해 입력하는 것 -->
+
+{% block content %}
+
+<h1>Hello! _mainpage</h1>
+<img src="{% static 'images/박영신 이모지.png' %}" style="width:500px;">
+<!-- 이미지를 불러오는 코드 -->
+
+{% endblock %}

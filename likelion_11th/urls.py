@@ -20,5 +20,5 @@ from main import views # main의
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.mainpage, name="mainpage"),
-    path('', views.secondpage, name="secondpage"),
+    path('second/', views.secondpage, name="secondpage"),
 ]

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -55,7 +56,9 @@ ROOT_URLCONF = 'likelion_11th.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'likelion_11th', 'templates')], 
+        # view에서 templates를 출력하기 위해서 templates의 위치를 알려주는 코드
+        # 베이스 디렉토리라 하여 likelion_11th의 templates를 가리키는 것
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,3 +125,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# 개발자가 추가로 지정해주는 부분 - 프로젝트 내에서 사용되는 static 경로가 어딘지 설정
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'likelion_11th', 'static')]
+# 추후 배포를 위해 흩어져 있는 것들을 한데 모으는 코드
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
