@@ -6,6 +6,7 @@ class Blog(models.Model):
     writer = models.CharField(max_length=100)
     pub_date = models.DateTimeField()
     body = models.TextField()
+    image = models.ImageField(upload_to="blog/", blank=True, null=True)
 
     # admin 페이지에서 좀 더 알아보기 쉽게 설정하는 코드
     def __str__(self):

@@ -8,7 +8,7 @@
 <img src="{% static 'images/박영신 이모지.png' %}" style="width:500px;">
 <!-- 이미지를 불러오는 코드 -->
 <br>
-<a href="{% url 'new' %}">글 쓰기</a>
+<a href="{% url 'main:new' %}">글 쓰기</a>
 
 <h1>글 목록</h1>
 
@@ -18,7 +18,7 @@
         <h3>{{blog.title}}</h3>
         {{blog.writer}}<br>
         {{blog.summary}}
-        <a href="{% url 'detail' blog.id %}">...자세히</a>
+        <a href="{% url 'main:detail' blog.id %}">...자세히</a>
         <br>
     </div>
     {% endfor %}
